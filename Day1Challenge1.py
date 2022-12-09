@@ -23,4 +23,3 @@ def getBiggest(list):
 
 totalCalories("Day1Input.txt")
 getBiggest(caloriesPerReindeer)
-#print(caloriesPerReindeer)
