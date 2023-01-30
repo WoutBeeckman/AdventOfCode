@@ -12,4 +12,21 @@ def getScoreFromShape(inputFile):
             else:
                 score += 3
 
-getScoreFromShape("testData.txt")
+# getScoreFromShape("testData.txt")
+
+# Get all point from winning the matches, form the perspective of the second hand aka your hand
+def getScoreFromWinning(inputFile):
+    score = 0
+    with open(inputFile) as file:
+        for line in file:
+            opponentShape = line[0]
+            myShape = line[2]
+            # Check if it's a draw
+            if (opponentShape, myShape) in [("A", "X"), ("B", "Y"), ("C", "Z")]:
+                score += 3
+            # Check if you win
+            elif (opponentShape, myShape) in [("C","X"), ("A", "Y"), ("B","Z")]:
+                score += 6
+    return score
+
+print(getScoreFromWinning("testData"))
