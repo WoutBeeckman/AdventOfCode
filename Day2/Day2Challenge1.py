@@ -5,14 +5,15 @@ def getScoreFromShape(inputFile):
     score = 0
     with open(inputFile) as file:
         for line in file:
-            if line == ".*X":
+            if re.match(r".*X", line):
                 score += 1
-            elif line == ".*Y":
+            elif re.match(r".*Y", line):
                 score += 2
             else:
                 score += 3
+    return score
 
-# getScoreFromShape("testData.txt")
+# print(getScoreFromShape("testData"))
 
 # Get all point from winning the matches, form the perspective of the second hand aka your hand
 def getScoreFromWinning(inputFile):
@@ -29,4 +30,6 @@ def getScoreFromWinning(inputFile):
                 score += 6
     return score
 
-print(getScoreFromWinning("testData"))
+# print(getScoreFromWinning("testData"))
+
+print(getScoreFromShape("Day2Input.txt") + getScoreFromWinning("Day2Input.txt"))
