@@ -33,4 +33,4 @@ def getScoreFromWinning(inputFile):
 # print(getScoreFromWinning("testData"))
 
 # It works
-print(getScoreFromShape("Day2Input.txt") + getScoreFromWinning("Day2Input.txt"))
+print(getScoreFromShape("Day2Input.txt") + getScoreFromWinning("Day2Input.txt")
