@@ -29,7 +29,7 @@ def getChosenShapes(inputFile):
 # print(getChosenShapes("testData"))
 
 # Check the list with chosen shapes, and calculate points
-def calculatePoinsFromShapes(shapes):
+def getPointsFromShapes(shapes):
     score = 0
     for shape in shapes:
         if shape == "X":
@@ -39,5 +39,19 @@ def calculatePoinsFromShapes(shapes):
         else:
             score += 3
     return score
-print(calculatePoinsFromShapes(getChosenShapes("testData")))
+# print(getPointsFromShapes(getChosenShapes("testData")))
+
 # Calculate all wins and draws
+def getPointsFromWinning(inputFile):
+    score = 0
+    with open(inputFile) as file:
+        for line in file:
+            myShape = line[2]
+            # Check if it's a draw
+            if myShape == "Y":
+                score += 3
+            # Check if you win
+            elif myShape == "Z":
+                score += 6
+    return score
+# print(getPointsFromWinning("testData"))
