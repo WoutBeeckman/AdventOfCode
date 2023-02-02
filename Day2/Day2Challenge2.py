@@ -55,3 +55,5 @@ def getPointsFromWinning(inputFile):
                 score += 6
     return score
 # print(getPointsFromWinning("testData"))
+
+print(getPointsFromWinning("Day2Input.txt") + getPointsFromShapes(getChosenShapes("Day2Input.txt")))
