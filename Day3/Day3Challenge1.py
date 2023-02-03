@@ -1,6 +1,11 @@
 import re
 
 # Split the Rucksack in halve (two compartments so two strings)
+def splitString(string):
+    middle = int(len(string) / 2)
+    firstString = string[:middle]
+    secondString = string[middle:]
+    return firstString, secondString
 
 # Find which item appears in both strings (aka compartments)
 
