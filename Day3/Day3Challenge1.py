@@ -8,6 +8,10 @@ def splitString(string):
     return firstString, secondString
 
 # Find which item appears in both strings (aka compartments)
+def findSameLetter(firstString, secondString):
+    for letter in firstString:
+        if (letter) in (secondString):
+            return letter
 
 # Translate the item to it`s priority
 
