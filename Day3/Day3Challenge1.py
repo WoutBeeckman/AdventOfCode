@@ -1,5 +1,3 @@
-import re
-
 # Split the Rucksack in halve (two compartments so two strings)
 def splitString(string):
     middle = int(len(string) / 2)
@@ -25,3 +23,11 @@ def translateToPriority(letter):
         return priorityUpercase[index]
 
 # Loop through all lines, split each line, find double items, translate to priority, calculate total score
+def makeItWork(inputFile):
+    score = 0
+    with open(inputFile) as file:
+        for line in file:
+             score += translateToPriority(findSameLetter(*splitString(line)))
+    return score
+
+print(makeItWork("Day3Input.txt"))
