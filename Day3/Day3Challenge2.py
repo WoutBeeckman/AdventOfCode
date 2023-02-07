@@ -16,3 +16,27 @@ def translateToPriority(letter):
         return priorityUpercase[index]
 
 # Takes 3 lines, finds same letter, translates the letter to it's prority, adds the priority to the score, and move to the next tree letters
+def makeItWork(inputFile):
+    total = 0
+    with open(inputFile) as file:
+        line1 = ""
+        line2 = ""
+        line3 = ""
+        i = 0
+        for line in file:
+                if i == 0:
+                    line1 = line
+                    i += 1
+                elif i == 1:
+                    line2 = line
+                    i += 1
+                else:
+                    line3 = line
+                    i += 1
+                    letter = findSameLetter(line1, line2, line3)
+                    score = translateToPriority(letter)
+                    total += score
+                    i = 0
+    return total
+
+print(makeItWork("Day3Input.txt"))
